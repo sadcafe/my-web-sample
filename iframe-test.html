@@ -1,0 +1,23 @@
+<body> 
+    <script> 
+        var player; 
+        function onYoutubeIframeApiReady() { 
+            player = new YT.Player('player', { 
+                width : '640', height : '360', videoId : 'St7EhvnFi6c', events : { 
+                    'onReady' : onPlayerReady, 'onStateChange' : onPlayerStateChange 
+                } 
+            }); 
+        } 
+    </script> 
+    
+    <iframe src="page.html" width="300" height="300"> 
+        iframe을 지원하지 않는 브라우저입니다. 
+    </iframe> 
+
+    <object data="temp/러핑밀_EDA_토크기울기_20211209.pptx.pdf" type="application/pdf" width="800" height="1200">
+        <p>You don't have a PDF plugin, but you can
+            <a href="temp/러핑밀_EDA_토크기울기_20211209.pptx.pdf">download the PDF file.
+            </a>
+        </p>
+    </object>
+</body>
