@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS로 시작하기</title>
+    <style type="text/css">
+        #outer div ul .nav a {
+            background-color: blue;
+            padding: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        div div li a {
+            color: yellow;
+        }
+
+        li {
+            list-style-type: lower-alpha;
+        }
+
+        li li {
+            list-style-type: disc;
+        }
+
+        span {
+            background-color: aqua;
+        }
+
+        div > span {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="outer" class="container">
+        <div id="inner" class="container">
+            <ul>
+                <li class="nav"><a href="#">One</a></li>
+                <li class="nav"><a href="#">Two</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <ul>
+        <li>
+            <div>Item 1</div>
+            <ul>
+                <li>Subitem A</li>
+                <li>Subitem B</li>
+            </ul>
+        </li>
+        <li>
+            <div>Item 2</div>
+            <ul>
+                <li>Subitem A</li>
+                <li>Subitem B</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div>
+        <span>Span #1, in the div.
+            <span>Span #2, in the span that's in the div.</span>
+        </span>
+    </div>
+    <div>
+        <span>Span #3, not in the div at all.</span>
+        <span>test....<span>test22222</span></span>
+    </div>
+
+    <span>Span #3, not in the div at all.</span>
+
+</body>
+
+</html>
