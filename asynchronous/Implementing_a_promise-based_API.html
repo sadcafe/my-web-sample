@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Function start</title>
+    <style></style>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" size="10" value="Matilda" />
+    </div>
+    <div>
+      <label for="delay">Delay:</label>
+      <input type="text" id="delay" name="delay" size="10" value="1000" />
+    </div>
+    <button id="set-alarm">Set alarm</button>
+    <div id="output"></div>
+
+    <script>
+      const name = document.querySelector("#name");
+      const delay = document.querySelector("#delay");
+      const button = document.querySelector("#set-alarm");
+      const output = document.querySelector("#output");
+
+      function alarm(person, delay) {
+        return new Promise((resolve, reject) => {
+          if (delay < 0) {
+            throw new Error("Alarm delay must not be negative");
+          }
+          window.setTimeout(() => {
+            resolve(`Wake up, ${person}!`);
+          }, delay);
+        });
+      }
+
+      button.addEventListener("click", async () => {
+        try {
+          const message = await alarm(name.value, delay.value);
+          output.textContent = message;
+        } catch (error) {
+          output.textContent = `Couldn't set alarm: ${error}`;
+        }
+      });
+
+      //   button.addEventListener("click", () => {
+      //     alarm(name.value, delay.value)
+      //       .then((message) => (output.textContent = message))
+      //       .catch(
+      //         (error) => (output.textContent = `Couldn't set alarm: ${error}`)
+      //       );
+      //   });
+
+      //   const output = document.querySelector("#output");
+      //   const button = document.querySelector("#set-alarm");
+
+      //   function setAlarm() {
+      //     window.setTimeout(() => {
+      //       output.textContent = "Wake up!";
+      //       console.log("test - alarm");
+      //     }, 3000);
+      //     console.log("test");
+      //   }
+
+      //   button.addEventListener("click", setAlarm);
+    </script>
+  </body>
+</html>
